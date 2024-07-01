@@ -1,11 +1,11 @@
-package internal
+package implements
 
 import (
 	"context"
 	"fmt"
 
 	"github.com/starter-go/application"
-	"github.com/starter-go/module-email/mails"
+	"github.com/starter-go/mails"
 )
 
 // DispatcherManager ...

@@ -1,4 +1,4 @@
-package gen4email
+package test4mails
 
 import "github.com/starter-go/application"
 
@@ -30,12 +30,7 @@ func (inst *autoRegistrar) register(factory comFactory) error {
 func (inst*autoRegistrar) addAll() error {
 
     
-    inst.register(&pecb1d470d2_internal_DispatcherManager{})
-    inst.register(&pecb1d470d2_internal_DriverManagerImpl{})
-    inst.register(&pecb1d470d2_internal_MainDispatcherRegistry{})
-    inst.register(&pecb1d470d2_internal_MockDriver{})
-    inst.register(&pecb1d470d2_internal_SMSDriver{})
-    inst.register(&pecb1d470d2_internal_SMTPSenderDriver{})
+    inst.register(&p405cc385eb_code_Test1{})
 
 
     return nil

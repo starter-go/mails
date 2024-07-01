@@ -1,4 +1,4 @@
-package internal
+package implements
 
 import (
 	"bytes"
@@ -11,7 +11,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/starter-go/module-email/mails"
+	"github.com/starter-go/mails"
 )
 
 // SMTPSenderDriver ...
@@ -109,12 +109,17 @@ func (inst *smtpSender) stringListForAddresses(src []mails.Address) []string {
 	return dst
 }
 
-func (inst *smtpSender) prepareAuth(m *mails.Message) smtp.Auth {
-	ident := ""
+func (inst *smtpSender) prepareAuth(_ *mails.Message) smtp.Auth {
+
 	cfg := inst.config
 	username := cfg.UserName
 	password := cfg.Password
+
+	ident := username
 	host := cfg.Host
+
+	// return smtp.CRAMMD5Auth(username, password)
+
 	return smtp.PlainAuth(ident, username, password, host)
 }
 

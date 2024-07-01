@@ -1,10 +1,10 @@
-package internal
+package implements
 
 import (
 	"context"
 	"encoding/json"
 
-	"github.com/starter-go/module-email/mails"
+	"github.com/starter-go/mails"
 	"github.com/starter-go/vlog"
 )
 

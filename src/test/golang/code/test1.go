@@ -2,9 +2,10 @@ package code
 
 import (
 	"context"
+	"time"
 
 	"github.com/starter-go/application"
-	"github.com/starter-go/module-email/mails"
+	"github.com/starter-go/mails"
 )
 
 // Test1 ...
@@ -18,7 +19,10 @@ type Test1 struct {
 
 // Life ...
 func (inst *Test1) Life() *application.Life {
-	return &application.Life{OnStartPost: inst.run}
+	return &application.Life{
+		OnStart: inst.run,
+		OnLoop:  inst.loop,
+	}
 }
 
 func (inst *Test1) run() error {
@@ -35,4 +39,10 @@ func (inst *Test1) run() error {
 	msg.Content = []byte(text)
 
 	return inst.Sender.Send(ctx, msg)
+}
+
+func (inst *Test1) loop() error {
+	for {
+		time.Sleep(time.Second)
+	}
 }

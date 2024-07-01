@@ -1,4 +1,4 @@
-package internal
+package implements
 
 import (
 	"fmt"
@@ -7,7 +7,7 @@ import (
 
 	"github.com/starter-go/application"
 	"github.com/starter-go/application/properties"
-	"github.com/starter-go/module-email/mails"
+	"github.com/starter-go/mails"
 )
 
 // MainDispatcherRegistry ...

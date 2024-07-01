@@ -4,26 +4,38 @@
         "sources": [
             {
                 "id": "lib",
-                "path": "internal",
+                "path": "src/lib/golang",
+                "r": true
+            },
+            {
+                "id": "main",
+                "path": "src/main/golang",
                 "r": true
             },
             {
                 "id": "test",
-                "path": "src/test/code",
+                "path": "src/test/golang",
                 "r": true
             }
         ],
         "destinations": [
             {
                 "id": "lib",
-                "path": "gen/gen4email",
+                "path": "gen/lib4mails",
                 "sources": [
                     "lib"
                 ]
             },
             {
+                "id": "main",
+                "path": "gen/main4mails",
+                "sources": [
+                    "main"
+                ]
+            },
+            {
                 "id": "test",
-                "path": "gen/gen4emailtest",
+                "path": "gen/test4mails",
                 "sources": [
                     "test"
                 ]

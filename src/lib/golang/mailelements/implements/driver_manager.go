@@ -1,10 +1,10 @@
-package internal
+package implements
 
 import (
 	"fmt"
 
 	"github.com/starter-go/application"
-	"github.com/starter-go/module-email/mails"
+	"github.com/starter-go/mails"
 )
 
 // DriverManagerImpl ...
