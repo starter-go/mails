@@ -1,0 +1,9 @@
+hi,
+
+    this is a mail for testing of template.
+
+    a={{a}}
+    b={{b}}
+
+
+    from: units

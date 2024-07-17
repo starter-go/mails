@@ -36,6 +36,9 @@ func (inst*autoRegistrar) addAll() error {
     inst.register(&p1f13f945f5_implements_MockDriver{})
     inst.register(&p1f13f945f5_implements_SMSDriver{})
     inst.register(&p1f13f945f5_implements_SMTPSenderDriver{})
+    inst.register(&p90e018b46a_itemplates_TemplateCacheImpl{})
+    inst.register(&p90e018b46a_itemplates_TemplateLoaderImpl{})
+    inst.register(&p90e018b46a_itemplates_TemplateManagerImpl{})
 
 
     return nil

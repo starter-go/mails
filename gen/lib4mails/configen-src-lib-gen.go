@@ -1,8 +1,11 @@
 package lib4mails
 import (
     p0ef6f2938 "github.com/starter-go/application"
+    p52d293b71 "github.com/starter-go/i18n"
     pd671d76a1 "github.com/starter-go/mails"
     p1f13f945f "github.com/starter-go/mails/src/lib/golang/mailelements/implements"
+    p90e018b46 "github.com/starter-go/mails/src/lib/golang/mailelements/itemplates"
+    p69cb21798 "github.com/starter-go/mails/templates"
      "github.com/starter-go/application"
 )
 
@@ -278,6 +281,144 @@ func (inst* p1f13f945f5_implements_SMTPSenderDriver) inject(injext application.I
 
 
     return nil
+}
+
+
+
+// type p90e018b46.TemplateCacheImpl in package:github.com/starter-go/mails/src/lib/golang/mailelements/itemplates
+//
+// id:com-90e018b46a50d1bf-itemplates-TemplateCacheImpl
+// class:
+// alias:alias-69cb21798ba841067147ba8fee303bf2-TemplateCache
+// scope:singleton
+//
+type p90e018b46a_itemplates_TemplateCacheImpl struct {
+}
+
+func (inst* p90e018b46a_itemplates_TemplateCacheImpl) register(cr application.ComponentRegistry) error {
+	r := cr.NewRegistration()
+	r.ID = "com-90e018b46a50d1bf-itemplates-TemplateCacheImpl"
+	r.Classes = ""
+	r.Aliases = "alias-69cb21798ba841067147ba8fee303bf2-TemplateCache"
+	r.Scope = "singleton"
+	r.NewFunc = inst.new
+	r.InjectFunc = inst.inject
+	return r.Commit()
+}
+
+func (inst* p90e018b46a_itemplates_TemplateCacheImpl) new() any {
+    return &p90e018b46.TemplateCacheImpl{}
+}
+
+func (inst* p90e018b46a_itemplates_TemplateCacheImpl) inject(injext application.InjectionExt, instance any) error {
+	ie := injext
+	com := instance.(*p90e018b46.TemplateCacheImpl)
+	nop(ie, com)
+
+	
+    com.Next = inst.getNext(ie)
+
+
+    return nil
+}
+
+
+func (inst*p90e018b46a_itemplates_TemplateCacheImpl) getNext(ie application.InjectionExt)p69cb21798.TemplateLoader{
+    return ie.GetComponent("#alias-69cb21798ba841067147ba8fee303bf2-TemplateLoader").(p69cb21798.TemplateLoader)
+}
+
+
+
+// type p90e018b46.TemplateLoaderImpl in package:github.com/starter-go/mails/src/lib/golang/mailelements/itemplates
+//
+// id:com-90e018b46a50d1bf-itemplates-TemplateLoaderImpl
+// class:
+// alias:alias-69cb21798ba841067147ba8fee303bf2-TemplateLoader
+// scope:singleton
+//
+type p90e018b46a_itemplates_TemplateLoaderImpl struct {
+}
+
+func (inst* p90e018b46a_itemplates_TemplateLoaderImpl) register(cr application.ComponentRegistry) error {
+	r := cr.NewRegistration()
+	r.ID = "com-90e018b46a50d1bf-itemplates-TemplateLoaderImpl"
+	r.Classes = ""
+	r.Aliases = "alias-69cb21798ba841067147ba8fee303bf2-TemplateLoader"
+	r.Scope = "singleton"
+	r.NewFunc = inst.new
+	r.InjectFunc = inst.inject
+	return r.Commit()
+}
+
+func (inst* p90e018b46a_itemplates_TemplateLoaderImpl) new() any {
+    return &p90e018b46.TemplateLoaderImpl{}
+}
+
+func (inst* p90e018b46a_itemplates_TemplateLoaderImpl) inject(injext application.InjectionExt, instance any) error {
+	ie := injext
+	com := instance.(*p90e018b46.TemplateLoaderImpl)
+	nop(ie, com)
+
+	
+    com.I18 = inst.getI18(ie)
+    com.AppContext = inst.getAppContext(ie)
+
+
+    return nil
+}
+
+
+func (inst*p90e018b46a_itemplates_TemplateLoaderImpl) getI18(ie application.InjectionExt)p52d293b71.Service{
+    return ie.GetComponent("#alias-52d293b7197ae4adfab092ade2e718a2-Service").(p52d293b71.Service)
+}
+
+
+func (inst*p90e018b46a_itemplates_TemplateLoaderImpl) getAppContext(ie application.InjectionExt)p0ef6f2938.Context{
+    return ie.GetContext()
+}
+
+
+
+// type p90e018b46.TemplateManagerImpl in package:github.com/starter-go/mails/src/lib/golang/mailelements/itemplates
+//
+// id:com-90e018b46a50d1bf-itemplates-TemplateManagerImpl
+// class:
+// alias:alias-69cb21798ba841067147ba8fee303bf2-TemplateManager
+// scope:singleton
+//
+type p90e018b46a_itemplates_TemplateManagerImpl struct {
+}
+
+func (inst* p90e018b46a_itemplates_TemplateManagerImpl) register(cr application.ComponentRegistry) error {
+	r := cr.NewRegistration()
+	r.ID = "com-90e018b46a50d1bf-itemplates-TemplateManagerImpl"
+	r.Classes = ""
+	r.Aliases = "alias-69cb21798ba841067147ba8fee303bf2-TemplateManager"
+	r.Scope = "singleton"
+	r.NewFunc = inst.new
+	r.InjectFunc = inst.inject
+	return r.Commit()
+}
+
+func (inst* p90e018b46a_itemplates_TemplateManagerImpl) new() any {
+    return &p90e018b46.TemplateManagerImpl{}
+}
+
+func (inst* p90e018b46a_itemplates_TemplateManagerImpl) inject(injext application.InjectionExt, instance any) error {
+	ie := injext
+	com := instance.(*p90e018b46.TemplateManagerImpl)
+	nop(ie, com)
+
+	
+    com.Next = inst.getNext(ie)
+
+
+    return nil
+}
+
+
+func (inst*p90e018b46a_itemplates_TemplateManagerImpl) getNext(ie application.InjectionExt)p69cb21798.TemplateCache{
+    return ie.GetComponent("#alias-69cb21798ba841067147ba8fee303bf2-TemplateCache").(p69cb21798.TemplateCache)
 }
 
 

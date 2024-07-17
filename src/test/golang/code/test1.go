@@ -2,27 +2,33 @@ package code
 
 import (
 	"context"
-	"time"
 
-	"github.com/starter-go/application"
 	"github.com/starter-go/mails"
+	"github.com/starter-go/units"
 )
 
 // Test1 ...
 type Test1 struct {
+
 	//starter:component
+
+	_as func(units.Units) //starter:as(".")
 
 	Sender mails.Service //starter:inject("#")
 
 	ToAddr string //starter:inject("${mails.test.to-addr}")
 }
 
-// Life ...
-func (inst *Test1) Life() *application.Life {
-	return &application.Life{
-		OnStart: inst.run,
-		OnLoop:  inst.loop,
-	}
+func (inst *Test1) _impl() units.Units { return inst }
+
+// Units ...
+func (inst *Test1) Units(list []*units.Registration) []*units.Registration {
+	list = append(list, &units.Registration{
+		Name:    "test-1",
+		Enabled: true,
+		Test:    inst.run,
+	})
+	return list
 }
 
 func (inst *Test1) run() error {
@@ -41,8 +47,8 @@ func (inst *Test1) run() error {
 	return inst.Sender.Send(ctx, msg)
 }
 
-func (inst *Test1) loop() error {
-	for {
-		time.Sleep(time.Second)
-	}
-}
+// func (inst *Test1) loop() error {
+// 	for {
+// 		time.Sleep(time.Second)
+// 	}
+// }

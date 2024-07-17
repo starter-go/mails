@@ -31,6 +31,7 @@ func (inst*autoRegistrar) addAll() error {
 
     
     inst.register(&p405cc385eb_code_Test1{})
+    inst.register(&p405cc385eb_code_TestTemplate{})
 
 
     return nil
