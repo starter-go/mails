@@ -37,8 +37,8 @@ func (inst *TestTemplate) Units(list []*units.Registration) []*units.Registratio
 func (inst *TestTemplate) run() error {
 
 	name := "demo1"
-	lang := i18n.Language("zh_cn")
-	tmp, err := inst.TM.Find(name, lang)
+	langs := []i18n.Language{"fr_fr", "zh_cn", "en_us"} // ("zh_cn")
+	tmp, err := inst.TM.Find(name, langs...)
 	if err != nil {
 		return err
 	}
