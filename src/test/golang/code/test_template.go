@@ -22,19 +22,21 @@ type TestTemplate struct {
 	// ToAddr string //starter:inject("${mails.test.to-addr}")
 }
 
-func (inst *TestTemplate) _impl() units.Units { return inst }
-
-// Units ...
-func (inst *TestTemplate) Units(list []*units.Registration) []*units.Registration {
+// ListRegistrations implements units.Unit.
+func (inst *TestTemplate) ListRegistrations(list []*units.Registration) []*units.Registration {
 	list = append(list, &units.Registration{
 		Name:    "test-template",
 		Enabled: true,
-		Test:    inst.run,
+		Do:      inst.run,
 	})
 	return list
 }
 
-func (inst *TestTemplate) run() error {
+func (inst *TestTemplate) _impl() units.Unit {
+	return inst
+}
+
+func (inst *TestTemplate) run(cc context.Context) error {
 
 	name := "demo1"
 	langs := []i18n.Language{"fr_fr", "zh_cn", "en_us"} // ("zh_cn")

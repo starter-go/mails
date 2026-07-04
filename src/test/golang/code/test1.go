@@ -12,28 +12,30 @@ type Test1 struct {
 
 	//starter:component
 
-	_as func(units.Units) //starter:as(".")
+	_as func(units.Unit) //starter:as(".")
 
 	Sender mails.Service //starter:inject("#")
 
 	ToAddr string //starter:inject("${mails.test.to-addr}")
 }
 
-func (inst *Test1) _impl() units.Units { return inst }
-
-// Units ...
-func (inst *Test1) Units(list []*units.Registration) []*units.Registration {
+// ListRegistrations implements units.Unit.
+func (inst *Test1) ListRegistrations(list []*units.Registration) []*units.Registration {
 	list = append(list, &units.Registration{
 		Name:    "test-1",
 		Enabled: true,
-		Test:    inst.run,
+		Do:      inst.run,
 	})
 	return list
 }
 
-func (inst *Test1) run() error {
+func (inst *Test1) _impl() units.Unit {
+	return inst
+}
 
-	ctx := context.Background()
+func (inst *Test1) run(ctx context.Context) error {
+
+	// ctx :=  context.Background()
 	msg := &mails.Message{}
 
 	text := "hello, world"

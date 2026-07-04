@@ -9,17 +9,18 @@ import (
 
 func runTestCase(t *testing.T, caseName string) {
 
-	args := []string{}
-	mod := mails.TestModule()
+	a := []string{}
+	m := mails.TestModule()
 
-	units.Run(&units.Config{
-		T:        t,
-		Args:     args,
-		Cases:    caseName,
-		Module:   mod,
-		UsePanic: true,
-	})
+	c := &units.Context{
+		Arguments: a,
+		Module:    m,
+		UsePanic:  true,
+		T:         t,
+		Selector:  caseName,
+	}
 
+	units.Run(c)
 }
 
 ////////////////////////////////////////////////////////////////////////////////
