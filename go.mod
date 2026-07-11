@@ -1,18 +1,18 @@
 module github.com/starter-go/mails
 
-go 1.20
+go 1.23
+
+toolchain go1.24.7
 
 require (
-	github.com/starter-go/application v0.9.28
-	github.com/starter-go/i18n v0.0.6 // direct
-	github.com/starter-go/starter v1.0.14
-	github.com/starter-go/units v0.1.3
-	github.com/starter-go/vlog v0.9.12 // direct
+	github.com/starter-go/afs v0.10.0 // indirect
+	github.com/starter-go/application v0.10.0
+	github.com/starter-go/base v0.10.0 // indirect
+	github.com/starter-go/configen v0.10.0 // indirect
+	github.com/starter-go/i18n v0.10.0 // direct
+	github.com/starter-go/starter v0.10.0
+	github.com/starter-go/units v0.10.0
+	github.com/starter-go/vlog v0.10.0 // direct
 )
 
-require (
-	github.com/starter-go/afs v0.9.13 // indirect
-	github.com/starter-go/base v0.9.11 // indirect
-	github.com/starter-go/configen v0.9.5 // indirect
-	golang.org/x/sys v0.22.0 // indirect
-)
+require golang.org/x/sys v0.22.0 // indirect

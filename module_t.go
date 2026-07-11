@@ -8,8 +8,8 @@ import (
 
 const (
 	theModuleName     = "github.com/starter-go/mails"
-	theModuleVersion  = "v0.0.6"
-	theModuleRevision = 6
+	theModuleVersion  = "v0.10.0"
+	theModuleRevision = 7
 )
 
 ////////////////////////////////////////////////////////////////////////////////
